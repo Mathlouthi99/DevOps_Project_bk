@@ -6,6 +6,11 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Unit Tests') {
+            steps {
+                sh 'mvn test'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean package'
